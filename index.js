@@ -12,6 +12,7 @@ function startClock() {
 
 function updateTime() {
     const now = new Date();
+
     let hours = now.getHours();
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
@@ -33,14 +34,15 @@ function updateTime() {
 
 function toggleTimeFormat() {
     is24HourFormat = !is24HourFormat;
-}
-
-function formatNumber(value) {
-    return value < 10 ? "0" + value : value;
+    updateTime(); // instant update
 }
 
 function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
+}
+
+function formatNumber(value) {
+    return value < 10 ? "0" + value : value;
 }
 
 startClock();
