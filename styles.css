@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+    box-sizing: border-box; 
+}
+
+
+/* Light mode (default) */
+body {
+    background-color: white;
+    color: black;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.clock-background {
+    width: 100%;
+    height: 100vh;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: relative;
+}
+
+.container {
+    width: 500px;
+    height: 200px;
+}
+
+.clock {
+    width: 100%;
+    height: 100%;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock div {
+    font-size: 50px;
+    padding-left: 15px;
+}
+
+.clock span {
+    width: 110px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+
+.clock span::after {
+    font-size: 20px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#hours::after {
+    content: 'Hour';
+}
+
+#minutes::after {
+    content: 'Minute';
+}
+
+#second::after {
+    content: 'Second';
+}
+
+#meridian {
+    font-size: 50px;
+}
+
+.switch {
+    position: absolute;
+    top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.left-switch {
+    left: 20px;
+}
+
+.right-switch {
+    right: 20px;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+}
+
+input:checked + .slider {
+    background-color: black;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}

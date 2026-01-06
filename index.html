@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital-Clock</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="clock-background">
+        <div class="switch left-switch">
+            <label class="theme-switch">
+                <input type="checkbox" id="checkbox-24" onclick="clock.toggleTimeFormat()" />
+                <div class="slider round"></div>
+            </label>
+        </div>
+        <div class="switch right-switch">
+            <label class="theme-switch">
+                <input type="checkbox" id="checkbox" onclick="ThemeManager.toggleDarkMode()" />
+                <div class="slider round"></div>
+            </label>
+        </div>
+
+        <div class="container">
+            <div class="clock">
+                <span id="hours">00</span>
+                <span>:</span>
+                <span id="minutes">00</span>
+                <span>:</span>
+                <span id="second">00</span>
+                <div id="meridian"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script>
+        const clock = new DigitalClock({
+            hoursId: "hours",
+            minutesId: "minutes",
+            secondsId: "second",
+            meridianId: "meridian"
+        });
+    </script>
+</body>
+
+</html>
